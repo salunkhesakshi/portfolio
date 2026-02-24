@@ -1,0 +1,40 @@
+CREATE TABLE IF NOT EXISTS users (
+  id BIGSERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  role VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS profile (
+  id BIGSERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  title VARCHAR(255),
+  summary TEXT,
+  resume_url VARCHAR(255),
+  github_url VARCHAR(255),
+  hackerrank_url VARCHAR(255),
+  linkedin_url VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS skills (
+  id BIGSERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  category VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS projects (
+  id BIGSERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  tech_stack TEXT,
+  github_link VARCHAR(255),
+  live_link VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS contacts (
+  id BIGSERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP NOT NULL
+);
